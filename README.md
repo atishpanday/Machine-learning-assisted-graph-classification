@@ -1,1 +1,1 @@
-# machine-learning_assisted-graph-classification
+# machine-learning-assisted-graph-classification
