@@ -5,12 +5,8 @@
 The file 'initial_phases.txt' contains the MATLAB code to generate the initial phase values of the network. These values are homogeneously distributed between -pi and pi, and can be changed to vary between any -val to val as needed.
 
 The file 'network_generation.py' contains Python 3 code to generate the following:
-  1) The networks
-  2) The omega values
-
-1) The networks: Two types of networks can be generated here: ER random and scale-free. The networkx function erdos_renyi_graph() takes the network size (N), the probability of two nodes being connected (N/k) and the seed value to randomize the generation of the graph. The seed value must be different for each graph so as to ensure that each graph is unique. The function Barabasi_Albert_graph() takes in the network size (N), the number of connections to be made by each new node being connected to the graph (k/2) (this graph is formed by an algorithm called preferential attachment) and the seed values. Again the seed value must be unique for each graph.
-
-2) The omega values being generated here are from the function randn() which takes in an argument N, which is the number of values to be generated, and then generates N values having mean 0 and variance 1. To change the mean or the variance to some other values, the following equation must be used:
+   1) The networks: Two types of networks can be generated here: ER random and scale-free. The networkx function erdos_renyi_graph() takes the network size (N), the probability  of two nodes being connected (N/k) and the seed value to randomize the generation of the graph. The seed value must be different for each graph so as to ensure that each        graph is unique. The function Barabasi_Albert_graph() takes in the network size (N), the number of connections to be made by each new node being connected to the graph (k/2)    (this graph is formed by an algorithm called preferential attachment) and the seed values. Again the seed value must be unique for each graph.
+   2) The omega values being generated here are from the function randn() which takes in an argument N, which is the number of values to be generated, and then generates N values having mean 0 and variance 1. To change the mean or the variance to some other values, the following equation must be used:
 
 values = sqrt(variance) * randn() + mean
 
