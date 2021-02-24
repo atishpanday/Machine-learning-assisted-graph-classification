@@ -1,6 +1,6 @@
-# machine-learning-assisted-graph-classification
+# Machine-learning-assisted-graph-classification
 
-# data generation
+# Data generation
 
 The file 'initial_phases.txt' contains the MATLAB code to generate the initial phase values of the network. These values are homogeneously distributed between -pi and pi, and can be changed to vary between any -val to val as needed.
 
@@ -22,3 +22,4 @@ The way the data is read depends on the required data. For example, use the read
 
 # Training and testing the data
 
+The data is of the shape (T, N, S) where T is the number of time-steps, N is the total number of nodes taken, and S is the number of samples. First the data is read from the file, and then it is split into training and testing sets.
