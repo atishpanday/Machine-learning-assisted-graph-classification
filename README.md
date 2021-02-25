@@ -22,4 +22,20 @@ The way the data is read depends on the required data. For example, use the read
 
 # Training and testing the data
 
-The data is of the shape (T, N, S) where T is the number of time-steps, N is the total number of nodes taken, and S is the number of samples. First the data is read from the file, and then it is split into training and testing sets.
+The data is of the shape (S, T, N) where T is the number of time-steps, N is the total number of nodes taken, and S is the number of samples. First the data is read from the file, and stored as numpy arrays in different variables using the np.load() function. The labels for the data are generated as (1, C) dimensional vectors, where C is the number of classes.
+Thus for 2 class classification, the labels are [0 1] and [1 0].
+
+The dataset is then split into training and testing sets in the ratio 8:2 respectively using the sklearn.model_selection function train_test_split()
+
+x_train is the final input training data, x_test is the final input testing data.
+y_train is the final training output label, and y_test is the final testing output label.
+
+At this point the x_train and the x_test have the shape (0.8S, T, N) and (0.2S, T, N) but the input is required to be contained in a vector of length, thus the input is reshaped as (0.8S, T, N) to (0.8S, T, N, 1) using the function np.reshape().
+
+The Model:
+
+length_list is the list of lengths of time series to be used for training and testing the model.
+node_list is the number of nodes to be used for training and testing the model.
+
+We loop through the node_list and the length_list, and train and test the data according to the number of nodes in the ith position of the node_list and the lenght of time series in the jth position of length_list.
+
